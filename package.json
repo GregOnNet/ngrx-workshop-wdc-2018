@@ -28,10 +28,11 @@
   },
   "devDependencies": {
     "@angular-builders/jest": "^1.2.5",
-    "@angular-devkit/build-angular": "~0.9.0-rc.1",
+    "@angular-devkit/build-angular": "~0.8.4",
     "@angular/cli": "~7.0.0-rc.1",
     "@angular/compiler-cli": "^6.1.9",
     "@angular/language-service": "^6.1.9",
+    "@ngrx/schematics": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
