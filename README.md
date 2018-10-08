@@ -19,4 +19,4 @@ You should be able to see a test page at http://localhost:4200.
 
 ![demo-app](./src/assets/start-page.png)
 
-🎉 **Congratulations**, you are ready for the workshop. See you!
+🎉 **Congratulations**, you are ready for the workshop. I am happy to see you there!
