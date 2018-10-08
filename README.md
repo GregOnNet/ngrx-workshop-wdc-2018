@@ -17,6 +17,6 @@ npm start
 
 You should be able to see a test page at http://localhost:4200.
 
-![demo-app](./src/assets/start-page.png)
+![demo-app](./src/assets/start-page-wdc.png)
 
 🎉 **Congratulations**, you are ready for the workshop. I am happy to see you there!
