@@ -24,6 +24,7 @@
     "@angular/router": "^6.1.9",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
+    "ts-guid": "^1.0.11",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
