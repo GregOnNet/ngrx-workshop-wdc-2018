@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { newGuid } from 'ts-guid';
+import * as fromRoot from '../reducers';
 import { Task, TaskDraft } from './models';
 
 @Component({
@@ -9,7 +10,7 @@ import { Task, TaskDraft } from './models';
   styleUrls: ['./taskboard.component.css']
 })
 export class TaskboardComponent implements OnInit {
-  constructor(private _store: Store<any>) {}
+  constructor(private _store: Store<fromRoot.State>) {}
 
   ngOnInit() {}
 

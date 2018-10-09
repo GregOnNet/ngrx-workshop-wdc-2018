@@ -6,7 +6,11 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from '@angular/material';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { TaskboardEffects } from './effects/taskboard.effects';
 import { QuickAddComponent } from './quick-add/quick-add.component';
+import * as fromTaskboard from './reducers';
 import { TaskboardComponent } from './taskboard.component';
 
 @NgModule({
@@ -15,7 +19,9 @@ import { TaskboardComponent } from './taskboard.component';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreModule.forFeature('taskboard', fromTaskboard.reducers),
+    EffectsModule.forFeature([TaskboardEffects])
   ],
   declarations: [TaskboardComponent, QuickAddComponent]
 })

@@ -2,14 +2,14 @@
   [formGroup]="taskDraft"
   (ngSubmit)="create.emit(this.taskDraft.value)">
   <mat-form-field>
-    <input matInput type="text" formControlName="title">
+    <input matInput type="text" formControlName="title" placeholder="Title">
   </mat-form-field>
   <mat-form-field>
-    <input matInput type="text" formControlName="text">
+    <input matInput type="text" formControlName="text" placeholder="Text">
   </mat-form-field>
   <button
     [disabled]="taskDraft.invalid"
-    matButton
+    mat-button
     type="submit">
     Create
   </button>
