@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { newGuid } from 'ts-guid';
 import * as fromTaskboard from './reducers';
-import { CreateTask } from './actions/taskboard.actions';
+import { CreateTask, LoadAll } from './actions/taskboard.actions';
 import { Task, TaskDraft } from './models';
 
 @Component({
@@ -22,7 +22,9 @@ export class TaskboardComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._store.dispatch(new LoadAll());
+  }
 
   buildTask(draft: TaskDraft) {
     this._store.dispatch(

@@ -15,10 +15,19 @@ export const initialState: Slice = {
 
 export function reducer(slice = initialState, action: TaskboardActions): Slice {
   switch (action.type) {
-    case TaskboardActionTypes.Create:
+    case TaskboardActionTypes.CreateSucceeded:
       return {
         ...slice,
         entities: { ...slice.entities, [action.payload.guid]: action.payload }
+      };
+
+    case TaskboardActionTypes.LoadAllSucceeded:
+      return {
+        ...slice,
+        entities: action.payload.reduce(
+          (tasks, task) => ({ ...tasks, [task.guid]: task }),
+          {}
+        )
       };
 
     default:

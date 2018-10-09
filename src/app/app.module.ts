@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +17,7 @@ import { TaskboardModule } from './taskboard/taskboard.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatIconModule,
     StoreModule.forRoot(reducers, { metaReducers }),
