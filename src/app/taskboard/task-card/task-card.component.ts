@@ -4,7 +4,13 @@ import { Task } from '../models';
 @Component({
   selector: 'app-task-card',
   templateUrl: './task-card.component.html',
-  styleUrls: ['./task-card.component.css']
+  styles: [
+    `
+      mat-card {
+        margin: 16px;
+      }
+    `
+  ]
 })
 export class TaskCardComponent {
   @Input()

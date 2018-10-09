@@ -5,7 +5,14 @@ import { TaskDraft } from '../models';
 @Component({
   selector: 'app-quick-add',
   templateUrl: './quick-add.component.html',
-  styleUrls: ['./quick-add.component.css']
+  styles: [
+    `
+      :host {
+        display: block;
+        margin: 16px;
+      }
+    `
+  ]
 })
 export class QuickAddComponent {
   @Output()
