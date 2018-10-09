@@ -13,12 +13,15 @@ export const initialState: Slice = {
   entities: {}
 };
 
-export function reducer(state = initialState, action: TaskboardActions): Slice {
+export function reducer(slice = initialState, action: TaskboardActions): Slice {
   switch (action.type) {
-    case TaskboardActionTypes.LoadTaskboards:
-      return state;
+    case TaskboardActionTypes.Create:
+      return {
+        ...slice,
+        entities: { ...slice.entities, [action.payload.guid]: action.payload }
+      };
 
     default:
-      return state;
+      return slice;
   }
 }

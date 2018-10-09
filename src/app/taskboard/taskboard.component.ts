@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { newGuid } from 'ts-guid';
-import * as fromRoot from '../reducers';
+import * as fromTaskboard from './reducers';
+import { CreateTask } from './actions/taskboard.actions';
 import { Task, TaskDraft } from './models';
 
 @Component({
@@ -10,7 +13,14 @@ import { Task, TaskDraft } from './models';
   styleUrls: ['./taskboard.component.css']
 })
 export class TaskboardComponent implements OnInit {
-  constructor(private _store: Store<fromRoot.State>) {}
+  tasks$: Observable<Task[]>;
+
+  constructor(private _store: Store<fromTaskboard.State>) {
+    this.tasks$ = this._store.pipe(
+      select(state => state.tasks.entities),
+      map(entities => Object.values(entities))
+    );
+  }
 
   ngOnInit() {}
 
@@ -24,10 +34,4 @@ export class TaskboardComponent implements OnInit {
       })
     );
   }
-}
-
-export class CreateTask {
-  readonly type = 'Create';
-
-  constructor(public payload: Task) {}
 }

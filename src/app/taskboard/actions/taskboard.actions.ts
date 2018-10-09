@@ -1,11 +1,14 @@
 import { Action } from '@ngrx/store';
+import { Task } from '../models';
 
 export enum TaskboardActionTypes {
-  LoadTaskboards = '[Taskboard] Load Taskboards'
+  Create = '[Taskboard] Create new Task'
 }
 
-export class LoadTaskboards implements Action {
-  readonly type = TaskboardActionTypes.LoadTaskboards;
+export class CreateTask implements Action {
+  readonly type = TaskboardActionTypes.Create;
+
+  constructor(public payload: Task) {}
 }
 
-export type TaskboardActions = LoadTaskboards;
+export type TaskboardActions = CreateTask;
