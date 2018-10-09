@@ -1,13 +1,15 @@
+import { ActionReducerMap } from '@ngrx/store';
 import * as fromRoot from '../../reducers';
 import * as fromTasks from './taskboard.reducer';
 
-import { ActionReducerMap } from '@ngrx/store';
-
-export interface State extends fromRoot.State {
+export interface TaskboardState {
   tasks: fromTasks.Slice;
 }
 
-export const reducers: ActionReducerMap<State> = {
+export interface State extends fromRoot.State {
+  taskboard: TaskboardState;
+}
+
+export const reducers: ActionReducerMap<TaskboardState> = {
   tasks: fromTasks.reducer
 };
-

@@ -17,7 +17,7 @@ export class TaskboardComponent implements OnInit {
 
   constructor(private _store: Store<fromTaskboard.State>) {
     this.tasks$ = this._store.pipe(
-      select(state => state.tasks.entities),
+      select(state => state.taskboard.tasks.entities),
       map(entities => Object.values(entities))
     );
   }

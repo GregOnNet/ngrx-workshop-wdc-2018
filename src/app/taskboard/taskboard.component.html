@@ -1,1 +1,3 @@
 <app-quick-add (create)="buildTask($event)"></app-quick-add>
+
+<app-task-card [task]="task" *ngFor="let task of tasks$ | async"></app-task-card>
