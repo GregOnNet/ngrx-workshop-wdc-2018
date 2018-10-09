@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TaskDraft } from '../models';
 
 @Component({
   selector: 'app-quick-add',
   templateUrl: './quick-add.component.html',
   styleUrls: ['./quick-add.component.css']
 })
-export class QuickAddComponent implements OnInit {
+export class QuickAddComponent {
+  @Output()
+  create = new EventEmitter<TaskDraft>();
 
-  constructor() { }
+  taskDraft = this._declareForm();
 
-  ngOnInit() {
+  constructor(private _fb: FormBuilder) {}
+
+  private _declareForm(): FormGroup {
+    return this._fb.group({
+      title: ['', [Validators.required]],
+      text: ['']
+    });
   }
-
 }
