@@ -4,8 +4,7 @@ import { TaskDetailsComponent } from './taskboard/containers/task-details/task-d
 import { TaskboardComponent } from './taskboard/taskboard.component';
 
 const routes: Routes = [
-  { path: '', component: TaskboardComponent, pathMatch: 'full' },
-  { path: ':guid', component: TaskDetailsComponent }
+  { path: '', loadChildren: './taskboard/taskboard.module#TaskboardModule' }
 ];
 
 @NgModule({

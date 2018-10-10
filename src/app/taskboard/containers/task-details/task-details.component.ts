@@ -4,7 +4,7 @@ import { Task } from '../../models';
 
 import * as fromTaskboard from '../../store/reducers';
 import { Store, select } from '@ngrx/store';
-import { LoadAll } from '../../store/actions/taskboard.actions';
+import { LoadAllTasks } from '../../store/actions/taskboard.actions';
 
 @Component({
   selector: 'app-task-details',
@@ -19,6 +19,6 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._store.dispatch(new LoadAll());
+    this._store.dispatch(new LoadAllTasks());
   }
 }

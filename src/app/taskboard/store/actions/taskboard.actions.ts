@@ -8,7 +8,7 @@ export enum TaskboardActionTypes {
   CreateSucceeded = '[Taskboard] Create new Task succeeded'
 }
 
-export class LoadAll implements Action {
+export class LoadAllTasks implements Action {
   readonly type = TaskboardActionTypes.LoadAll;
 }
 
@@ -33,5 +33,5 @@ export class CreateTaskSucceeded implements Action {
 export type TaskboardActions =
   | CreateTask
   | CreateTaskSucceeded
-  | LoadAll
+  | LoadAllTasks
   | LoadAllSucceeded;
