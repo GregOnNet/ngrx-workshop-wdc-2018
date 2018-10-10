@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Taskboard Actions [Taskboard] Create new Task When action is raised should create a task 1`] = `
+Object {
+  "entities": Object {
+    "123": Object {
+      "guid": "123",
+    },
+  },
+}
+`;

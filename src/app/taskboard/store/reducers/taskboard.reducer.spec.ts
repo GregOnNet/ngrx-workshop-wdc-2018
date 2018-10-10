@@ -1,5 +1,8 @@
 import { Task } from '../../models';
-import { CreateTask, TaskboardActionTypes } from '../actions/taskboard.actions';
+import {
+  CreateTaskSucceeded,
+  TaskboardActionTypes
+} from '../actions/taskboard.actions';
 import { reducer, Slice } from './taskboard.reducer';
 
 describe('Taskboard Actions', () => {
@@ -8,7 +11,7 @@ describe('Taskboard Actions', () => {
       it('should create a task', () => {
         const task = { guid: '123' } as Task;
         const initialState: Slice = { entities: {} };
-        const action = new CreateTask(task);
+        const action = new CreateTaskSucceeded(task);
 
         const state = reducer(initialState, action);
 
