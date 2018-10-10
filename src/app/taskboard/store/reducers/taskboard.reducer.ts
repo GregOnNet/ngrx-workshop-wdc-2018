@@ -3,36 +3,24 @@ import {
   TaskboardActions,
   TaskboardActionTypes
 } from '../actions/taskboard.actions';
+import { EntityState, createEntityAdapter } from '@ngrx/entity';
 
-export interface Slice {
-  entities: { [guid: string]: Task };
-}
+export interface Slice extends EntityState<Task> {}
+export const adapter = createEntityAdapter<Task>({
+  selectId: task => task.guid
+});
 
-export const initialState: Slice = {
-  entities: {}
-};
+const initialState = adapter.getInitialState();
 
 export function reducer(slice = initialState, action: TaskboardActions): Slice {
   switch (action.type) {
     case TaskboardActionTypes.CreateSucceeded:
       return action.payload.guid
-        ? {
-            ...slice,
-            entities: {
-              ...slice.entities,
-              [action.payload.guid]: action.payload
-            }
-          }
+        ? adapter.addOne(action.payload, slice)
         : slice;
 
     case TaskboardActionTypes.LoadAllSucceeded:
-      return {
-        ...slice,
-        entities: action.payload.reduce(
-          (tasks, task) => ({ ...tasks, [task.guid]: task }),
-          {}
-        )
-      };
+      return adapter.addAll(action.payload, slice);
 
     default:
       return slice;
