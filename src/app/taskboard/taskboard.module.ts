@@ -5,6 +5,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule
 } from '@angular/material';
 import { EffectsModule } from '@ngrx/effects';
@@ -26,6 +27,7 @@ import { TaskboardComponent } from './taskboard.component';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatIconModule,
     StoreModule.forFeature('taskboard', fromTaskboard.reducers),
     EffectsModule.forFeature([TaskboardEffects]),
 

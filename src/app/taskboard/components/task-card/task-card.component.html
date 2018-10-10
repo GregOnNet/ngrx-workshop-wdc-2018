@@ -7,4 +7,7 @@
       {{ task.text }}
     </p>
   </mat-card-content>
+  <mat-card-actions>
+    <a mat-button [routerLink]="task.guid"><mat-icon>edit</mat-icon></a>
+  </mat-card-actions>
 </mat-card>

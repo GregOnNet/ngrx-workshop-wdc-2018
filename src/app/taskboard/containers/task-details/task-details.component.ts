@@ -11,14 +11,10 @@ import { LoadAllTasks } from '../../store/actions/taskboard.actions';
   templateUrl: './task-details.component.html',
   styleUrls: ['./task-details.component.css']
 })
-export class TaskDetailsComponent implements OnInit {
+export class TaskDetailsComponent {
   task$: Observable<Task>;
 
   constructor(private _store: Store<fromTaskboard.State>) {
     this.task$ = this._store.pipe(select(fromTaskboard.currentTask));
-  }
-
-  ngOnInit() {
-    this._store.dispatch(new LoadAllTasks());
   }
 }
