@@ -20,6 +20,11 @@ export const reducers: ActionReducerMap<TaskboardState> = {
 
 const visitTaskboard = createFeatureSelector<TaskboardState>('taskboard');
 
-export const all = createSelector(visitTaskboard, s =>
-  Object.values(s.tasks.entities)
+export const entities = createSelector(visitTaskboard, t => t.tasks.entities);
+export const all = createSelector(entities, tasks => Object.values(tasks));
+
+export const currentTask = createSelector(
+  fromRoot.activatedRoute,
+  entities,
+  (route, tasks) => tasks[route.params.guid]
 );

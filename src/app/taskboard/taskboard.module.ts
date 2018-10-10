@@ -14,6 +14,7 @@ import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskboardEffects } from './store/effects/taskboard.effects';
 import * as fromTaskboard from './store/reducers';
 import { TaskboardComponent } from './taskboard.component';
+import { TaskDetailsComponent } from './containers/task-details/task-details.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { TaskboardComponent } from './taskboard.component';
     StoreModule.forFeature('taskboard', fromTaskboard.reducers),
     EffectsModule.forFeature([TaskboardEffects])
   ],
-  declarations: [TaskboardComponent, QuickAddComponent, TaskCardComponent]
+  declarations: [TaskboardComponent, QuickAddComponent, TaskCardComponent, TaskDetailsComponent]
 })
 export class TaskboardModule {}
