@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 70%;
 }
 
 .logos {
@@ -21,4 +21,8 @@ mat-icon {
   font-size: 2em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+button[mat-raised-button] {
+  margin: 32px;
 }
