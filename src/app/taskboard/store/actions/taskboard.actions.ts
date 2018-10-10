@@ -2,10 +2,10 @@ import { Action } from '@ngrx/store';
 import { Task } from '../../models';
 
 export enum TaskboardActionTypes {
-  LoadAll = '[Taskboard] Load all Tasks',
-  LoadAllSucceeded = '[Taskboard] Load all Tasks succeeded',
-  Create = '[Taskboard] Create new Task',
-  CreateSucceeded = '[Taskboard] Create new Task succeeded'
+  LoadAll = '[Taskboard/API] Load all Tasks',
+  LoadAllSucceeded = '[Taskboard/API] Load all Tasks succeeded',
+  Create = '[Taskboard/API] Create new Task',
+  CreateSucceeded = '[Taskboard/API] Create new Task succeeded'
 }
 
 export class LoadAllTasks implements Action {
