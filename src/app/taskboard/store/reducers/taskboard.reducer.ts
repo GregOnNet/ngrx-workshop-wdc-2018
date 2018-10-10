@@ -3,7 +3,7 @@ import {
   TaskboardActions,
   TaskboardActionTypes
 } from '../actions/taskboard.actions';
-import { Task } from '../models';
+import { Task } from '../../models';
 
 export interface Slice {
   entities: { [guid: string]: Task };

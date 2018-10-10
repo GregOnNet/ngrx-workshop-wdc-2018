@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { ApiTasks } from '../lib/api-tasks.service';
+import { map, switchMap } from 'rxjs/operators';
+import { ApiTasks } from '../../lib';
 import {
-  TaskboardActionTypes,
   CreateTask,
   CreateTaskSucceeded,
-  LoadAllSucceeded
+  LoadAllSucceeded,
+  TaskboardActionTypes
 } from '../actions/taskboard.actions';
-import { switchMap, map } from 'rxjs/operators';
 
 @Injectable()
 export class TaskboardEffects {
   @Effect()
-  loadAll = this.actions$.pipe(
+  loadAll = this._actions$.pipe(
     ofType(TaskboardActionTypes.LoadAll),
     switchMap(() => this._tasks.loadAll()),
     map(tasks => new LoadAllSucceeded(tasks))
   );
 
   @Effect()
-  create = this.actions$.pipe(
+  create = this._actions$.pipe(
     ofType<CreateTask>(TaskboardActionTypes.Create),
     switchMap(({ payload }) => this._tasks.create(payload)),
     map(task => new CreateTaskSucceeded(task))
   );
 
-  constructor(private actions$: Actions, private _tasks: ApiTasks) {}
+  constructor(private _actions$: Actions, private _tasks: ApiTasks) {}
 }

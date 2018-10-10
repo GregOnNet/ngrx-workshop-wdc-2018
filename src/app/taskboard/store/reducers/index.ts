@@ -3,7 +3,7 @@ import {
   createFeatureSelector,
   createSelector
 } from '@ngrx/store';
-import * as fromRoot from '../../reducers';
+import * as fromRoot from '../../../reducers';
 import * as fromTasks from './taskboard.reducer';
 
 export interface TaskboardState {

@@ -9,9 +9,9 @@ import {
 } from '@angular/material';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { TaskboardEffects } from './effects/taskboard.effects';
 import { QuickAddComponent } from './quick-add/quick-add.component';
-import * as fromTaskboard from './reducers';
+import { TaskboardEffects } from './store/effects/taskboard.effects';
+import * as fromTaskboard from './store/reducers';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { TaskboardComponent } from './taskboard.component';
 

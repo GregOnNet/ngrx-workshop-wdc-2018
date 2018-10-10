@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Task } from '../models';
+import { Task } from '../../models';
 
 export enum TaskboardActionTypes {
   LoadAll = '[Taskboard] Load all Tasks',

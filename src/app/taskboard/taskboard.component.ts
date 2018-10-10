@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { newGuid } from 'ts-guid';
-import { CreateTask, LoadAll } from './actions/taskboard.actions';
 import { Task, TaskDraft } from './models';
-import * as fromTaskboard from './reducers';
+import { CreateTask, LoadAll } from './store/actions/taskboard.actions';
+import * as fromTaskboard from './store/reducers';
 
 @Component({
   selector: 'app-taskboard',
