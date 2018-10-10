@@ -9,10 +9,10 @@ import {
 } from '@angular/material';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { QuickAddComponent } from './quick-add/quick-add.component';
+import { QuickAddComponent } from './components/quick-add/quick-add.component';
+import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskboardEffects } from './store/effects/taskboard.effects';
 import * as fromTaskboard from './store/reducers';
-import { TaskCardComponent } from './task-card/task-card.component';
 import { TaskboardComponent } from './taskboard.component';
 
 @NgModule({

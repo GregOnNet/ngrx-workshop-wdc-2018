@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TaskDraft } from '../models';
+import { TaskDraft } from '../../models';
 
 @Component({
   selector: 'app-quick-add',
