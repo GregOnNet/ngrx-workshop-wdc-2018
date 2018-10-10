@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Taskboard Actions [Taskboard] Create new Task When action is raised should create a task 1`] = `
+exports[`Taskboard Actions [Taskboard] Create new Task succeeded When action is raised should create a task 1`] = `
 Object {
   "entities": Object {
     "123": Object {
@@ -10,7 +10,7 @@ Object {
 }
 `;
 
-exports[`Taskboard Actions [Taskboard] Create new Task When no guid is provided should not create a task 1`] = `
+exports[`Taskboard Actions [Taskboard] Create new Task succeeded When no guid is provided should not create a task 1`] = `
 Object {
   "entities": Object {},
 }

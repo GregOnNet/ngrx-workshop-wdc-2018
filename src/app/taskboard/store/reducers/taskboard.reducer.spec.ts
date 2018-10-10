@@ -6,7 +6,7 @@ import {
 import { reducer, Slice } from './taskboard.reducer';
 
 describe('Taskboard Actions', () => {
-  describe(`${TaskboardActionTypes.Create}`, () => {
+  describe(`${TaskboardActionTypes.CreateSucceeded}`, () => {
     describe('When action is raised', () => {
       it('should create a task', () => {
         const task = { guid: '123' } as Task;
@@ -21,7 +21,7 @@ describe('Taskboard Actions', () => {
 
     describe('When no guid is provided', () => {
       it('should not create a task', () => {
-        const taskWithoutGuid = { } as Task;
+        const taskWithoutGuid = {} as Task;
         const initialState: Slice = { entities: {} };
         const action = new CreateTaskSucceeded(taskWithoutGuid);
 
