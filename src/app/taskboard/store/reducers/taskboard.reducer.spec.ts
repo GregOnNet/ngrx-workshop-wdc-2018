@@ -18,5 +18,17 @@ describe('Taskboard Actions', () => {
         expect(state).toMatchSnapshot();
       });
     });
+
+    describe('When no guid is provided', () => {
+      it('should not create a task', () => {
+        const taskWithoutGuid = { } as Task;
+        const initialState: Slice = { entities: {} };
+        const action = new CreateTaskSucceeded(taskWithoutGuid);
+
+        const state = reducer(initialState, action);
+
+        expect(state).toMatchSnapshot();
+      });
+    });
   });
 });

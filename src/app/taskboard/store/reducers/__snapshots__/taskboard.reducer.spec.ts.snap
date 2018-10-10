@@ -9,3 +9,9 @@ Object {
   },
 }
 `;
+
+exports[`Taskboard Actions [Taskboard] Create new Task When no guid is provided should not create a task 1`] = `
+Object {
+  "entities": Object {},
+}
+`;
