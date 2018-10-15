@@ -1,3 +1,9 @@
-<p>
-  tasks-dashboard works!
-</p>
+<app-quick-add (create)="createTask($event)"></app-quick-add>
+
+<ng-container *ngIf="tasks$ | async as tasks; else noTasks">
+  <app-task-card *ngFor="let task of tasks"></app-task-card>
+</ng-container>
+
+<ng-template #noTasks>
+  You are all set! There is nothing to do.
+</ng-template>

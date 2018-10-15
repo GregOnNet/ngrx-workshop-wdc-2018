@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { empty, Observable } from 'rxjs';
+import { Task, TaskDraft } from '../../models';
 
 @Component({
   selector: 'app-tasks-dashboard',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks-dashboard.component.scss']
 })
 export class TasksDashboardComponent implements OnInit {
+  // TODO: Replace with values from store
+  tasks$: Observable<Task[]> = empty();
 
-  constructor() { }
+  constructor(/* inject Store<any> */) {}
 
-  ngOnInit() {
+  createTask(draft: TaskDraft) {
+    /* TODO
+     * dispatch task
+     * create guid for draft
+     */
   }
 
+  ngOnInit() {}
 }
